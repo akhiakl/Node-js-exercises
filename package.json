@@ -1,0 +1,26 @@
+{
+  "name": "nodejs",
+  "version": "0.0.0",
+  "description": "Node app study",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "bookshelf": "^0.10.4",
+    "cookie-parser": "~1.4.3",
+    "ejs": "^2.5.7",
+    "express": "~4.15.5",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.2.1",
+    "knex": "^0.13.0",
+    "mysql": "^2.15.0",
+    "yarn": "^1.2.1"
+  },
+  "author": "Akl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akhilbit/Node-js-exercises/issues"
+  }
+}

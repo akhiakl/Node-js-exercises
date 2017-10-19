@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="style.css" rel="stylesheet" type="text/css" >
+      <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <header>
+            <h1>Welcome Admin</h1>
+        </header>
+
+        <div class="main">
+        <section class="signup">
+            <div class="signup-box-head">
+                Add new users
+            </div>
+            <div class="signup-box-body">
+            <form action="/adduser" method="post">
+                <br> <input type="text" name="name" style="font-family:FontAwesome, Ubuntu" placeholder="&#xf007; Name"><br>
+                <br> <input type="text" name="email" style="font-family:FontAwesome, Ubuntu" placeholder="&#xf0e0; Email"><br>
+                <br> <input type="text" name="fusername" style="font-family:FontAwesome, Ubuntu" placeholder="&#xf007; Username"><br>
+                <br><select name="role">
+                    <option value="" disabled="disabled" selected="selected">Please select a role</option>
+                    <option value="admin">Admin</option>
+                    <option value="editor">Editor</option>
+                </select><br>
+                <br><input type="text" name="password" style="font-family:FontAwesome, Ubuntu" placeholder="&#xf084; Password"><br><br>
+                <div class="input_submit">
+                    <input type="submit" id="submit" value="Submit details"><br>
+                </div>
+            </form>
+            <br>
+            <br>
+            <div class="view text-left">
+                <button class="btn button" onclick="window.location.href='/view'">View
+            </div>
+            <div class="signout text-right">
+                <button class="btn button" onclick="window.location.href='/signout'">Signout
+            </div><br>
+            </div>
+        </section>
+        </div>
+    </body>
+</html>

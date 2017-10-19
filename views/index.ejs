@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="style.css" rel="stylesheet" type="text/css" media="all">
+      <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(function(){
+    $('.signup').hide();
+ $('#signup').click(function(){
+        $('.login').hide();
+        $('.signup').show();
+        return false;
+    });  
+    $('#signin').click(function(){
+        $('.signup').hide();
+        $('.login').show();
+        return false;
+    });  
+});
+
+</script>
+    </head>
+    <body>
+        <header>
+            <h1>My Website</h1>
+        </header>
+
+        <div class="main">
+        <section class="login">
+            <div class="login-box-head">
+                Login to My Website<br>
+                <div class="warning">
+                 <%= message%>
+                </div>
+            </div>
+            <div class="login-box-body">
+            <form action="/" method="post">
+                <br> <input type="text" name="username" style="font-family:FontAwesome, Ubuntu" placeholder="&#xf007; Username" required><br>
+                <input type="password" name="password" style="font-family:FontAwesome, Ubuntu" placeholder="&#xf084; Password" required><br><br>
+                <a href="#"> Forgot password? </a><br><br><br>
+                <div class="input_submit">
+                    <input type="submit" id="submit" value="Login"><br>
+                </div>
+            </form>
+            </div>
+        </section>
+        </div>
+    </body>
+</html>
+
+

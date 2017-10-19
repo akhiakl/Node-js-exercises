@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>All users</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <style>
+            .button {
+             background: lightgrey;
+            }
+            .button:hover {
+                background: grey;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="table">
+                <th>NAME</th>
+                <th>ROLE</th>
+                <th>DELETE</th>
+             
+            <%for (var i = 0; i < result.length; i++) {%>
+            <tr>
+                <td>
+                   <%=result[i].name%> 
+                </td>
+                <td>
+                    <form action='/edit' method='POST'>
+                        <input type="hidden" name="id" value= <%=result[i].id%>>
+                        <select name="role">
+                            <option value="" disabled="disabled" selected="selected"><%=result[i].role%></option>
+                            <option value="admin">Admin</option>
+                            <option value="editor">Editor</option>
+                        </select>
+                        <input type = "submit" style="font-family:FontAwesome" value="&#xf00c;">
+                    </form>
+                </td>
+                <!--<td>
+                    <%=result[i].role%>
+                </td>-->
+                <td>
+                    <form action='/delete' method='POST'>
+                        <input type="hidden" name="id" value= <%=result[i].id%>>
+                        <input type = "submit" style="font-family:FontAwesome" value="&#xf00d;">
+                    </form>
+                </td>
+                
+            </tr>
+            <%}%>
+        </table>
+        <br>
+        <div class="signout text-left">
+             <button class="btn button" onclick="window.location.href='/'"><span>Back <i class="fa fa-backward"> </i></span>
+        </div>
+            <br>
+    </body>
+</html>

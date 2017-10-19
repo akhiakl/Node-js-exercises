@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>All users</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <style>
+            .button {
+             background: lightgrey;
+            }
+            .button:hover {
+                background: grey;
+            }
+        </style>
+    </head>
+    <body class="bg-info">
+        <div class="container-fluid bg-info">
+            <div class="container bg-warning text-center mt-5">
+                <h2>Hi <%=name%></h2>
+                <form class="form-inline pt-4" action='/addlist' method="post">
+                    <input type="hidden" name="username" value= <%=username%>>
+                    <input class="col col-10 form-control" type="text" name="task" placeholder="Enter new task"><input class="col col-2 form-control" type = "submit" style="font-family:FontAwesome" value="&#xf00c;">
+                </form>
+                <h3>Your Tasks</h3>
+                <% for(var i = 0; i < list.length; i++) { console.log(list[i].task)%>
+                    <form class="form-inline mb-0" action='/delete_task' method='POST'>
+                        <input type="hidden" name="id" value= <%=list[i].id%>>                   
+                        <input class="col col-10 form-control" type="text" disabled="disabled" value='<%=list[i].task%>' >                        
+                        <input class="col col-2 form-control" type = "submit" style="font-family:FontAwesome" value="&#xf00d;">
+                    </form>
+                <%}%>
+                <br>
+                <div class="signout text-left p-5">
+                    <button class="btn button" onclick="window.location.href='/signout'"><span>Signout
+                </div>
+            </div>  
+        </div>
+        
+    </body>
+</html>
